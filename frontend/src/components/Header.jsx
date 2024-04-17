@@ -37,10 +37,10 @@ const Header = () => {
                             <FaOpencart className='p-2 h-10 w-10 ring-1 ring-slate-900/10 rounded-full hover:text-secondary' />
                             <span className='relative flexCenter h-5 w-5 rounded-full bg-secondary text-primary medium-14 -top-2'>0</span>
                         </NavLink>
-                        <NavLink to={'logout'} className={'btn-secondary flexCenter gap-x-2 medium-16 rounded-full'}>
+                        {/* <NavLink to={'logout'} className={'btn-secondary flexCenter gap-x-2 medium-16 rounded-full'}>
                             <img src={logout} alt='logoutIcon' height={19} width={19} />
                             Logout
-                        </NavLink>
+                        </NavLink> */}
                         <NavLink to={'login'} className={'btn-secondary flexCenter gap-x-2 medium-16 rounded-full'}>
                             <img src={user} alt='logoutIcon' height={19} width={19} />
                             Login

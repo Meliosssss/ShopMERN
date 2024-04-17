@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { NAV_LINKS } from '../assets/nav_links.js';
+import NAV_LINKS from '../assets/nav_links.js';
 
 const Navbar = ({ containerStyles }) => {
     return (
