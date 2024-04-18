@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Navbar from './Navbar';
 import { Link, NavLink } from 'react-router-dom';
 //assets
@@ -8,10 +8,15 @@ import user from '../assets/user.svg';
 //icons
 import { MdMenu, MdClose } from 'react-icons/md';
 import { FaOpencart } from 'react-icons/fa';
+//context
+import { ShopContext } from '../context/ShopContext';
 
 const Header = () => {
+
     const [menuOpened, setMenuOpened] = useState(false);
     const toggleMenu = () => setMenuOpened(!menuOpened);
+    const { getTotalCartItems } = useContext(ShopContext);
+
     return (
         <header className='max-padd-container w-full z-50'>
             <div className='flexBetween py-3'>
@@ -35,7 +40,7 @@ const Header = () => {
                     <div className='flexBetween sm:gap-x-6'>
                         <NavLink to={'cart-page'} className={'flex'}>
                             <FaOpencart className='p-2 h-10 w-10 ring-1 ring-slate-900/10 rounded-full hover:text-secondary' />
-                            <span className='relative flexCenter h-5 w-5 rounded-full bg-secondary text-primary medium-14 -top-2'>0</span>
+                            <span className='relative flexCenter h-5 w-5 rounded-full bg-secondary text-primary medium-14 -top-2'>{getTotalCartItems()}</span>
                         </NavLink>
                         {/* <NavLink to={'logout'} className={'btn-secondary flexCenter gap-x-2 medium-16 rounded-full'}>
                             <img src={logout} alt='logoutIcon' height={19} width={19} />
