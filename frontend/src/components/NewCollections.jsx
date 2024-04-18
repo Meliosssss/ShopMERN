@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Item from './Item'
-import LATEST from '../assets/latest.js';
 
 const NewCollections = () => {
+
+    const [LATEST, setLATEST] = useState([])
+    useEffect(() => {
+        fetch('http://localhost:4000/newcollections').then((response) => response.json()).then((data) => setLATEST(data));
+    }, []);
+
     return (
         <section className='max-padd-container'>
             <div className='bg-primary rounded-3xl py-12 xl:py-28'>

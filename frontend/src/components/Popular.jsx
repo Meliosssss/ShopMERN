@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Item from './Item'
-import POPULAR from '/src/assets/popular.js';
 
 const Popular = () => {
+
+    const [POPULAR, setPOPULAR] = React.useState([])
+    useEffect(() => {
+        fetch('http://localhost:4000/allproducts').then((response) => response.json()).then((data) => setPOPULAR(data));
+    }, []);
     return (
         <section className='max-padd-container'>
             <div className='bg-primary rounded-3xl py-12 xl:py-28'>
